@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory name="">
+		<!-- Affiche les logs SQL -->
+		<property name="show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<property name="javax.persistence.validation.mode">none</property>
+		<!-- Paramètres de connexion à la base de données -->
+		<property name="hibernate.dialect">${hibernate.dialect}</property>
+		<property name="hibernate.connection.driver_class">${jdbc.driverClassName}</property>
+		<property name="hibernate.connection.url">${jdbc.url}</property>
+		<property name="hibernate.connection.username">${jdbc.username}</property>
+		<property name="hibernate.connection.password">${jdbc.password}</property>
+		<!-- Comportement pour la conservation des tables -->
+		<property name="hbm2ddl.auto">update</property>
+		<!-- classes à mapper -->
+		<mapping class="com.sidexia.core.entities.Category" />
+		<mapping class="com.sidexia.core.entities.Product" />
+	</session-factory>
+</hibernate-configuration>
